@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-
+  
+  const nayoks = ['razzak', 'jasim', 'alomgir', 'salman', 'bappi', 'shuvo']
   const products = [
     {name:'Photoshop', price: '$90.99'},
     {name:'Illustrator', price: '$60.99'},
     {name:'PDF Reader', price: '$6.99'}
   ]
+  // const productNames = products.map(product => product.name)
   // var name= "RoBIn";
   // var person = {
   //   Name: "tanvir",
@@ -27,9 +29,20 @@ function App() {
 
         <p>I'am a React Person</p>
 
-        <Product product={products[0]}></Product>
+        <ul>
+          {nayoks.map(nayok => <li>{nayok}</li>)}
+          {/* <li>{nayoks[0]}</li>
+          <li>{nayoks[1]}</li>
+          <li>{nayoks[2]}</li>
+          <li>{nayoks[3]}</li> */}
+          {products.map(product=> <li>{product.name}</li>)}
+        </ul>
+        {
+          products.map(product => <Product product={product}></Product>)
+        }
+        {/* <Product product={products[0]}></Product>
         <Product product={products[1]}></Product>
-        <Product product={products[2]}></Product>
+        <Product product={products[2]}></Product> */}
 
         <Person name="Tanvir" job="web-Hero"></Person>
         <Person name="Robin" food="Biriani"></Person>
