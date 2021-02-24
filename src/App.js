@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
 
         <p>I'am a React Person</p>
 
+        <Counter></Counter>
         <ul>
           {nayoks.map(nayok => <li>{nayok}</li>)}
           {/* <li>{nayoks[0]}</li>
@@ -100,6 +102,17 @@ function Person(props) {
       <h1>Name: {props.name}</h1>
       <h3>Job: {props.job}</h3>
       <p>Food: {props.food}</p>
+    </div>
+  )
+}
+function Counter() {
+  const [count, setCount] = useState(0);
+  const handleIncrease = () => setCount(count + 1);
+  return(
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick= {() => setCount(count + 1)}>Increase</button>
+      <button onClick= {() => setCount(count - 1)}>Decrease</button>
     </div>
   )
 }
